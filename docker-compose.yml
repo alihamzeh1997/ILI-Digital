@@ -1,0 +1,20 @@
+services:
+  ili-digital:
+    build:
+      context: .
+    container_name: ili-digital
+    ports:
+      - "8501:8501"
+    environment:
+      # Put your real key in a local .env file (not committed) and docker compose will load it automatically.
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      # Optional: make Streamlit a bit quieter in containers
+      - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+    volumes:
+      # Persist Chroma DB between container restarts
+      - ./chroma_db:/app/chroma_db
+      # Make the CSV available (read-only)
+      - ./Data Manipulation:/app/Data Manipulation:ro
+    restart: unless-stopped
+
+
