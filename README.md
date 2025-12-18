@@ -74,7 +74,7 @@ run without any local Python environment setup.
 
 ### Step 1: Clone the Repository
 ```bash
-git clone https://github.com/alihamzeh1997/rag-app.git
+git clone https://github.com/alihamzeh1997/ILI-Digital.git
 cd rag-app
 ```
 
